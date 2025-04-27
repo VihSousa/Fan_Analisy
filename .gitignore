@@ -1,0 +1,5 @@
+.venv/
+.env
+Teste.py
+anotar.txt
+requirements.txt
