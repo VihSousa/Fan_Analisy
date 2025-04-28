@@ -5,6 +5,7 @@
 import os
 import tweepy #  API do Twitter
 from dotenv import load_dotenv
+import time
 
 load_dotenv()
 
@@ -16,7 +17,10 @@ class TwitterAPI:
             consumer_secret=os.getenv("API_SECRET")
         )
     
-    def get_tweets(self, query="#GoFURIA lang:pt -is:retweet", max_results=50):
+    # =================== Método Funcional =================== #
+    
+    """def get_tweets(self, query="#GoFURIA lang:pt -is:retweet", max_results=50):
+        time.sleep(2) 
         try:
             response = self.client.search_recent_tweets(
                 query=query,
@@ -29,4 +33,22 @@ class TwitterAPI:
             return []
         except Exception as e:
             print(f"Erro inesperado: {e}")
-            return []
+            return []"""
+            
+            
+    # =================== Método de Testes =================== #
+    def get_tweets(self, query="", max_results=50):
+        time.sleep(2) 
+        fake_tweets = [
+            type('Tweet', (), {
+                'text': 'FURIA venceu! KSCERATO monstro! #GoFURIA', 
+                'public_metrics': {'like_count': 150},
+                'created_at': "2023-05-01"
+            }),
+            type('Tweet', (), {
+                'text': 'Que jogo incrível da FURIA no major!', 
+                'public_metrics': {'like_count': 200},
+                'created_at': "2023-05-01"
+            })
+        ]
+        return fake_tweets

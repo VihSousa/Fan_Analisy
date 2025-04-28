@@ -3,6 +3,7 @@
 #========================#
 
 import pandas as pd # Organiza em tabelas
+from nltk.corpus import stopwords
 from collections import Counter
 
 class DataProcessor:
@@ -16,9 +17,18 @@ class DataProcessor:
         } for tweet in tweets])
     
     @staticmethod
-    def top_words(tweets, n=5, exclude=None):
-        """Retorna as n palavras mais comuns."""
+    def top_words(tweets, n=10, exclude=None):
+        """Retorna palavras filtradas (sem stopwords, hashtags ou menções)."""
         exclude = exclude or []
-        all_words = " ".join(t.text for t in tweets).split()
-        filtered = [w for w in all_words if w.lower() not in exclude]
-        return Counter(filtered).most_common(n)
+        stopwords_pt = set(stopwords.words("portuguese"))
+        
+        all_words = [
+            word.lower() for tweet in tweets 
+            for word in tweet.text.split() 
+            if (word.lower() not in stopwords_pt and 
+                word.lower() not in exclude and 
+                len(word) > 2 and 
+                not word.startswith(("#", "@")))
+        ]
+        
+        return Counter(all_words).most_common(n)
