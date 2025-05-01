@@ -5,6 +5,8 @@
 import pandas as pd # Organiza em tabelas
 from nltk.corpus import stopwords
 from collections import Counter
+import random
+
 
 class DataProcessor:
     @staticmethod
@@ -32,3 +34,21 @@ class DataProcessor:
         ]
         
         return Counter(all_words).most_common(n)
+    
+class FanDataProcessor:
+    def __init__(self):
+        self.profiles = []
+        
+    def validate_document(self, doc_file):
+        # Implementar validação básica de documento
+        return {
+            "valid": len(doc_file.getvalue()) > 1000,  # Exemplo simples
+            "type": "CPF" if "cpf" in doc_file.name.lower() else "RG"
+        }
+    
+    def analyze_social_media(self, twitter_handle):
+        # Implementar análise básica
+        return {
+            "follows_furia": True,  # Placeholder
+            "activity_score": random.randint(1, 100)
+        }
