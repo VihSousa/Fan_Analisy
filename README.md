@@ -1,91 +1,112 @@
-# FURIA FALA - Chat Oficial para Fãs
+# <img src="https://upload.wikimedia.org/wikipedia/pt/f/f9/Furia_Esports_logo.png" width="40"> FURIA FALA - Chat Interativo para Fãs
 
-Plataforma interativa para fãs do time de CS da FURIA Esports acompanharem jogos, interagirem com outros torcedores e visualizarem análises em tempo real.
+Plataforma para fãs acompanharem o time de CS da FURIA Esports, com análise de sentimentos em redes sociais, simulador de partidas e chat comunitário.
 
-## Funcionalidades Principais
+### 🚀 Núcleo do Sistema
+| Módulo | Descrição |
+|--------|-----------|
+| **Chat Inteligente** | Respostas contextualizadas com personalidade do time |
+| **Painel Unificado** | Visualização integrada de todas as métricas |
+| **API em Tempo Real** | Conexão direta com serviços da FURIA |
 
-### 💬 Chat Oficial
-- Interface conversacional intuitiva
-- Navegação entre diferentes módulos
-- Respostas interativas baseadas nas escolhas do usuário
+### 🔍 Análise de Dados
 
-### 🐦 Análise de Tweets
-- Coleta de tweets em tempo real com a hashtag #GoFURIA
-- Análise de sentimentos (positivo/negativo/neutro)
-- Métricas de engajamento da torcida
-- Nuvem de palavras mais usadas pelos fãs
++  Monitoramento de Twitter: #GoFURIA 
++  Análise de Sentimentos (Positivo/Negativo/Neutro)
++  Nuvem de Palavras em tempo real
 
-### 🎮 Simulador de Partidas ao Vivo
-- Acompanhamento do placar em tempo real
-- Estatísticas detalhadas dos jogadores (K/D/A e rating)
-- Eventos da partida atualizados ao longo do tempo
-- Simulação realista da progressão do jogo
+🎮 Simulação
 
-### 👥 Chat da Torcida
-- Interação com outros torcedores simulados
-- Sistema de mensagens em tempo real
-- Respostas dinâmicas baseadas no contexto da partida
-- Interface personalizada que diferencia mensagens do usuário
++ Placares dinâmicos de partidas
++ Estatísticas de jogadores (KDA, Rating HLTV)
++ Replay de lances importantes
 
-### 📊 Dashboard Completo
-- Visualização integrada de todas as funcionalidades
-- Métricas e estatísticas consolidadas
-- Interface intuitiva e responsiva
+### 📚 Bibliotecas Principais
 
-## Tecnologias Utilizadas
+| Categoria       | Tecnologias                                                                                  | Versão   | Uso Específico                                                                 |
+|-----------------|----------------------------------------------------------------------------------------------|----------|--------------------------------------------------------------------------------|
+| **Interface**  | <img src="https://img.shields.io/badge/Streamlit-000000?logo=streamlit">                     | 1.28+    | Framework principal para construção da UI                                      |
+| **API**        | <img src="https://img.shields.io/badge/Tweepy-000000?logo=twitter">                          | 4.14     | Coleta de tweets em tempo real                                                |
+| **NLP**        | <img src="https://img.shields.io/badge/NLTK-000000">                                         | 3.8      | Pré-processamento de texto                                                    |
+|                 | <img src="https://img.shields.io/badge/TextBlob-000000">                                     | 0.17     | Análise de sentimentos                                                        |
+| **Visualização**| <img src="https://img.shields.io/badge/WordCloud-000000">                                    | 1.9      | Nuvem de palavras                                                             |
+|                 | <img src="https://img.shields.io/badge/Matplotlib-000000?logo=python">                      | 3.7      | Geração de gráficos                                                           |
+| **Dados**      | <img src="https://img.shields.io/badge/Pandas-000000?logo=pandas">                           | 2.1      | Manipulação de dados                                                          |
 
-- **Python 3.10+**: Linguagem base do projeto
-- **Streamlit**: Framework para interface web interativa
-- **Tweepy**: API para conexão com Twitter
-- **TextBlob**: Biblioteca para análise de sentimentos
-- **WordCloud**: Visualização de texto em nuvem de palavras
-- **Pandas**: Manipulação e análise de dados
-- **Matplotlib**: Geração de gráficos e visualizações
-- **NLTK**: Processamento de linguagem natural
+### ⚙️ Infraestrutura
 
-## Como Executar
-
-1. Clone este repositório
-2. Instale as dependências:
+```bash
+Python 3.10+  # Versão base
+dotenv        # Gerenciamento de variáveis de ambiente
 ```
+
+## 🚀 Configuração e Execução
+
+### Pré-requisitos
+- Python 3.10+
+- Conta de Desenvolvedor do Twitter ([crie aqui](https://developer.twitter.com/))
+- Git (para clonagem)
+
+### ⚙️ Instalação Passo-a-Passo
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/furia-fala.git
+cd furia-fala
+
+# Crie um ambiente virtual (recomendado)
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate    # Windows
+
+# Instale as dependências
 pip install -r docs/requirements.txt
+
+# Configure as variáveis de ambiente
+cp .env.example .env 
 ```
-3. Crie um arquivo `.env` na raiz do projeto com suas credenciais do Twitter:
+
+Edite o .env com suas credenciais:
+
+.env:
 ```
 API_KEY=sua_chave_aqui
 API_SECRET=seu_segredo_aqui
 API_BEARER=seu_token_bearer_aqui
 ```
-4. Execute a aplicação:
-```
+
+▶️ Execução
+```bash
 streamlit run App.py
+Acesse: http://localhost:8501
 ```
 
-## Estrutura do Projeto
-
-- **App.py**: Aplicação principal e interface do usuário
-- **core/**: Módulos principais
-  - **Twitter.py**: Conexão com API do Twitter
-  - **Sentiment.py**: Análise de sentimentos
-  - **Data.py**: Processamento de dados
-  - **Utils.py**: Funções utilitárias
-
-## Próximos Passos
-
-- Implementação de perfil de usuário
-- Sistema de notificações em tempo real
-- Integração com transmissões ao vivo
-- Enquetes e votações interativas
-- Conteúdo exclusivo para membros
+🏗️ Estrutura do Código
+```
+furia-fala/
+├── core/
+│   ├── Twitter.py      → Conexão com API Twitter
+│   ├── Sentiment.py    → Análise de sentimentos
+│   ├── Data.py         → Processamento de dados
+│   └── Utils.py        → Funções auxiliares
+├── static/
+│   └── furia_logo.png  → Assets visuais
+├── App.py              → Aplicação principal
+└── README.md           → Documentação
+```
 
 ## Vídeo Demonstrativo
 
-[Link para o vídeo de demonstração]
+Possibilidade
 
-## Autor
+## Autor ✍️ 
 
 João Vítor Costa Sousa - Desafio FURIA 2025
 
-## Suporte com o Layout
+Primeira vez codando um projeto em python
+
+## Suporte emocional 🫂
 
 Johan Santos - https://github.com/JohanVPS
+
+Lino Menezes - https://github.com/LinoGomes54
