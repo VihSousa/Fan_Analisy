@@ -1,4 +1,5 @@
 .venv/
+docs/
 .env
 Teste.py
 anotar.txt
