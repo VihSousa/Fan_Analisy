@@ -1,4 +1,4 @@
-# FURIA FALA - Chat Oficial para Fãs
+# <img src="https://upload.wikimedia.org/wikipedia/pt/f/f9/Furia_Esports_logo.png" width="35"> FURIA FALA - Chat Interativo para Fãs (Protótipo)
 
 Plataforma para fãs acompanharem o time de CS da FURIA Esports, com análise de sentimentos em redes sociais, simulador de partidas e chat comunitário.
 
@@ -103,8 +103,10 @@ Possibilidade
 
 João Vítor Costa Sousa - Desafio FURIA 2025
 
-Primeira vez codando um projeto em python
+Primeira vez codando um projeto 90% em python
 
 ## Suporte emocional 🫂
 
 Johan Santos - https://github.com/JohanVPS
+
+Lino Menezes - https://github.com/LinoGomes54
