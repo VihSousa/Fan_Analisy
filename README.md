@@ -1,37 +1,36 @@
 # <img src="https://upload.wikimedia.org/wikipedia/pt/f/f9/Furia_Esports_logo.png" width="35"> FURIA FALA - Chat Interativo para Fãs (Protótipo)
 
-Plataforma para fãs acompanharem o time de CS da FURIA Esports, com análise de sentimentos em redes sociais, simulador de partidas e chat comunitário.
+Plataforma para fãs acompanharem o time de CS da FURIA Esports, de fã para fã.
 
 ### 🚀 Núcleo do Sistema
-| Módulo | Descrição |
-|--------|-----------|
-| **Chat Inteligente** | Respostas contextualizadas com personalidade do time |
-| **Painel Unificado** | Visualização integrada de todas as métricas |
-| **API em Tempo Real** | Conexão direta com serviços da FURIA |
+| Módulo                     | Descrição                                            |
+|----------------------------|------------------------------------------------------|
+| **Chat Inteligente**       | Respostas contextualizadas com informações do time   |
+| **Simulador de partidas**  | Visualização integrada de todas as métricas          |
+| **API do Twitter**         | Avaliação dos fãs através dos cometários FURIA       |
 
-### 🔍 Análise de Dados
+### 🤖 Chat Inteligente
+- Respostas contextualizadas sobre times e jogadores
+- Navegação hierárquica por categorias
+- Histórico de conversas persistente
 
-+  Monitoramento de Twitter: #GoFURIA 
-+  Análise de Sentimentos (Positivo/Negativo/Neutro)
-+  Nuvem de Palavras em tempo real
-
-🎮 Simulação
-
-+ Placares dinâmicos de partidas
-+ Estatísticas de jogadores (KDA, Rating HLTV)
-+ Replay de lances importantes
+### 🎮 Simulador de Partidas
+- Placares atualizados em tempo real
+- Estatísticas detalhadas (KDA, Rating HLTV)
+- Replay de lances importantes
+- Comparativo entre times
 
 ### 📚 Bibliotecas Principais
 
 | Categoria       | Tecnologias                                                                                  | Versão   | Uso Específico                                                                 |
 |-----------------|----------------------------------------------------------------------------------------------|----------|--------------------------------------------------------------------------------|
-| **Interface**  | <img src="https://img.shields.io/badge/Streamlit-000000?logo=streamlit">                     | 1.28+    | Framework principal para construção da UI                                      |
-| **API**        | <img src="https://img.shields.io/badge/Tweepy-000000?logo=twitter">                          | 4.14     | Coleta de tweets em tempo real                                                |
-| **NLP**        | <img src="https://img.shields.io/badge/NLTK-000000">                                         | 3.8      | Pré-processamento de texto                                                    |
-|                 | <img src="https://img.shields.io/badge/TextBlob-000000">                                     | 0.17     | Análise de sentimentos                                                        |
-| **Visualização**| <img src="https://img.shields.io/badge/WordCloud-000000">                                    | 1.9      | Nuvem de palavras                                                             |
-|                 | <img src="https://img.shields.io/badge/Matplotlib-000000?logo=python">                      | 3.7      | Geração de gráficos                                                           |
-| **Dados**      | <img src="https://img.shields.io/badge/Pandas-000000?logo=pandas">                           | 2.1      | Manipulação de dados                                                          |
+| **Interface**   | <img src="https://img.shields.io/badge/Streamlit-000000?logo=streamlit">                     | 1.28+    | Framework principal para construção da UI                                      |
+| **API**         | <img src="https://img.shields.io/badge/Tweepy-000000?logo=twitter">                          | 4.14     | Coleta de tweets em tempo real                                                 |
+| **NLP**         | <img src="https://img.shields.io/badge/NLTK-000000">                                         | 3.8      | Pré-processamento de texto                                                     |
+|                 | <img src="https://img.shields.io/badge/TextBlob-000000">                                     | 0.17     | Análise de sentimentos                                                         |
+| **Visualização**| <img src="https://img.shields.io/badge/WordCloud-000000">                                    | 1.9      | Nuvem de palavras                                                              |
+|                 | <img src="https://img.shields.io/badge/Matplotlib-000000?logo=python">                       | 3.7      | Geração de gráficos                                                            |
+| **Dados**       | <img src="https://img.shields.io/badge/Pandas-000000?logo=pandas">                           | 2.1      | Manipulação de dados                                                           |
 
 ### ⚙️ Infraestrutura
 
@@ -86,18 +85,18 @@ Acesse: http://localhost:8501
 furia-fala/
 ├── core/
 │   ├── Twitter.py      → Conexão com API Twitter
+│   ├── FuriaData.py    → Dados sobre o time e a equipe
+│   ├── ChatInfo.py     → Organização e manipulação dos dados
 │   ├── Sentiment.py    → Análise de sentimentos
 │   ├── Data.py         → Processamento de dados
 │   └── Utils.py        → Funções auxiliares
 ├── static/
 │   └── furia_logo.png  → Assets visuais
 ├── App.py              → Aplicação principal
+├── Index.html          → Introduço web
+├── IDEA.md             → Aprendizado e ideias do desenvolvedor
 └── README.md           → Documentação
 ```
-
-## Vídeo Demonstrativo
-
-Possibilidade
 
 ## Autor ✍️ 
 
