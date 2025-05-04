@@ -1,7 +1,3 @@
-#==================================#
-# funções utilitárias reutilizávei #
-#==================================#
-
 import re #ReGex
 from nltk.corpus import stopwords #Textos limpos
 from collections import Counter # Palavras frequentes

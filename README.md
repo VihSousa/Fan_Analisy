@@ -110,3 +110,6 @@ Primeira vez codando um projeto 90% em python
 Johan Santos - https://github.com/JohanVPS
 
 Lino Menezes - https://github.com/LinoGomes54
+
+
+Para visualizar a documentação completa do projeto planejado, acesse [IDEA.md](IDEA.md).

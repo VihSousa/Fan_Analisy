@@ -1,26 +1,22 @@
-#========================#
-# Processamento de Dados #
-#========================#
-
-import pandas as pd # Organiza em tabelas
+import pandas as pd
 from nltk.corpus import stopwords
 from collections import Counter
-import random
-
+import matplotlib.pyplot as plt
 
 class DataProcessor:
     @staticmethod
-    def tweets_to_df(tweets):
-        """Converte lista de tweets para DataFrame."""
+    def tweets_to_df(tweets):                       # Converte lista de tweets para DataFrame.
+
         return pd.DataFrame([{
             "text": tweet.text,
             "created_at": tweet.created_at,
-            "likes": tweet.public_metrics["like_count"]
+            "likes": tweet.public_metrics.get("like_count", 0),
+            "sentiment": None  # Será preenchido depois
         } for tweet in tweets])
     
     @staticmethod
-    def top_words(tweets, n=10, exclude=None):
-        """Retorna palavras filtradas (sem stopwords, hashtags ou menções)."""
+    def top_words(tweets, n=10, exclude=None):         # Retorma palavras filtradas
+
         exclude = exclude or []
         stopwords_pt = set(stopwords.words("portuguese"))
         
@@ -32,23 +28,23 @@ class DataProcessor:
                 len(word) > 2 and 
                 not word.startswith(("#", "@")))
         ]
-        
         return Counter(all_words).most_common(n)
-    
-class FanDataProcessor:
-    def __init__(self):
-        self.profiles = []
+
+    @staticmethod
+    def generate_stats_plot(player_stats):           #Gera gráfico de radar para stats de jogadores.
+
+        stats = {
+            'Rating': player_stats.get('rating', 0),
+            'Kills': player_stats.get('kills', 0) / 1000,
+            'Clutches': player_stats.get('clutches', 0) / 10
+        }
         
-    def validate_document(self, doc_file):
-        # Implementar validação básica de documento
-        return {
-            "valid": len(doc_file.getvalue()) > 1000,  # Exemplo simples
-            "type": "CPF" if "cpf" in doc_file.name.lower() else "RG"
-        }
-    
-    def analyze_social_media(self, twitter_handle):
-        # Implementar análise básica
-        return {
-            "follows_furia": True,  # Placeholder
-            "activity_score": random.randint(1, 100)
-        }
+        fig, ax = plt.subplots(figsize=(6, 6), subplot_kw={'polar': True})
+        angles = list(stats.keys())
+        values = list(stats.values())
+        
+        ax.fill(angles, values, color='red', alpha=0.25)
+        ax.set_yticklabels([])
+        ax.set_title('Performance do Jogador', pad=20)
+        
+        return fig

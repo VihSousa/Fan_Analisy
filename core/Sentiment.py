@@ -1,7 +1,3 @@
-#==================#
-# ANÁLISE DE DADOS #
-#==================#
-
 from textblob import TextBlob
 from core.Utils import clean_text  # Função auxiliar
 
