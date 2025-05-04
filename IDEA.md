@@ -38,6 +38,7 @@ Algumas das ideias tiveram que ser descartadas ou reduzidas, como:
 | Validação por IA custom          | Limitações do GPT-3.5 Turbo       | Filtros manuais com TextBlob         |
 | Dados Twitter em tempo real      | Rate limit da API (100 tweets)    | Dataset estático, em caso de erro    |
 | Menor número de bibliotecas      | Tempo de entrega                  | Foco no Streamlit                    |
+| Aplicação do Firebase            | Erro inesperado                   | Removido                             |
 
 ### Bibliotecas Python Aprendidas
 
